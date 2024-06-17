@@ -5,7 +5,7 @@ abstract class CatalogItem {
 }
 
 class CategoryTitle implements CatalogItem {
-  const CategoryTitle({required this.title});
+  const CategoryTitle(this.title);
   final String title;
 
   @override
@@ -14,7 +14,7 @@ class CategoryTitle implements CatalogItem {
       padding: const EdgeInsets.only(top: 12.0),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.labelMedium?.copyWith(
+        style: Theme.of(context).textTheme.labelLarge?.copyWith(
               color: Colors.blue,
               fontWeight: FontWeight.bold,
             ),
@@ -24,7 +24,7 @@ class CategoryTitle implements CatalogItem {
 }
 
 class WidgetItem implements CatalogItem {
-  const WidgetItem({required this.title});
+  const WidgetItem(this.title);
   final String title;
 
   @override

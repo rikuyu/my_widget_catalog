@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:my_widget_catalog/catalog_item.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MyWidgetCatalog extends StatelessWidget {
   const MyWidgetCatalog({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context);
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "Widget Catalog",
-          style: TextStyle(color: Colors.white),
+        title: Text(
+          l10n.appTitle,
+          style: const TextStyle(color: Colors.white),
         ),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
@@ -19,24 +22,22 @@ class MyWidgetCatalog extends StatelessWidget {
         child: ListView(
           children: [
             // List系
-            const CategoryTitle(title: "List系").buildTitle(context),
-            const WidgetItem(title: "GridView").buildTitle(context),
-            const WidgetItem(title: "SliverList").buildTitle(context),
-            const WidgetItem(title: "SliverGrid").buildTitle(context),
-            const WidgetItem(title: "SliverAppBar").buildTitle(context),
-            const WidgetItem(title: "ListWheelScrollView").buildTitle(context),
-            const WidgetItem(title: "DraggableScrollableSheet")
-                .buildTitle(context),
-            const WidgetItem(title: "Flow").buildTitle(context),
+            CategoryTitle(l10n.categoryListTitle).buildTitle(context),
+            WidgetItem(l10n.gridView).buildTitle(context),
+            WidgetItem(l10n.sliverList).buildTitle(context),
+            WidgetItem(l10n.sliverGrid).buildTitle(context),
+            WidgetItem(l10n.listWheelScrollView).buildTitle(context),
+            WidgetItem(l10n.draggableScrollableSheet).buildTitle(context),
+            WidgetItem(l10n.flow).buildTitle(context),
 
             // Button系
-            const CategoryTitle(title: "Button").buildTitle(context),
-            const WidgetItem(title: "ElevatedButton").buildTitle(context),
-            const WidgetItem(title: "OutlinedButton").buildTitle(context),
-            const WidgetItem(title: "TextButton").buildTitle(context),
+            CategoryTitle(l10n.categoryButtonTitle).buildTitle(context),
+            WidgetItem(l10n.elevatedButton).buildTitle(context),
+            WidgetItem(l10n.outlinedButton).buildTitle(context),
+            WidgetItem(l10n.textButton).buildTitle(context),
 
             // TextField系
-            const CategoryTitle(title: "TextField").buildTitle(context),
+            CategoryTitle(l10n.categoryTextFieldTitle).buildTitle(context),
           ],
         ),
       ),

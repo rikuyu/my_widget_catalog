@@ -1,0 +1,15 @@
+{
+    "appTitle": "Widget Catalog",
+    "categoryListTitle": "List",
+    "gridView": "GridView",
+    "sliverList": "SliverList",
+    "sliverGrid": "SliverGrid",
+    "listWheelScrollView": "ListWheelScrollView",
+    "draggableScrollableSheet": "DraggableScrollableSheet",
+    "flow": "Flow",
+    "categoryButtonTitle": "Button",
+    "elevatedButton": "ElevatedButton",
+    "outlinedButton": "OutlinedButton",
+    "textButton": "TextButton",
+    "categoryTextFieldTitle": "TextField"
+}
