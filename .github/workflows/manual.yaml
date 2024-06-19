@@ -1,0 +1,14 @@
+name: Manual
+on: 
+    workflow_dispatch:
+        inputs:
+            name:
+                type: string
+                required: true
+                description: please write your name
+jobs:
+    run:
+        runs-on: ubuntu-latest                
+        steps:
+            - run: echo "Hello, ${{ inputs.name }}!!"
+
