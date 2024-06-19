@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class CatalogItem {
-  Widget buildTitle(BuildContext context);
+  Widget build(BuildContext context);
 }
 
 class CategoryTitle implements CatalogItem {
@@ -9,9 +9,9 @@ class CategoryTitle implements CatalogItem {
   final String title;
 
   @override
-  Widget buildTitle(BuildContext context) {
+  Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 12.0),
+      padding: const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 0),
       child: Text(
         title,
         style: Theme.of(context).textTheme.labelLarge?.copyWith(
@@ -24,19 +24,26 @@ class CategoryTitle implements CatalogItem {
 }
 
 class WidgetItem implements CatalogItem {
-  const WidgetItem(this.title);
+  const WidgetItem(this.title, this.onTap);
   final String title;
+  final VoidCallback onTap;
 
   @override
-  Widget buildTitle(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          border: Border(bottom: BorderSide(color: Colors.grey))),
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        child: Text(
-          title,
-          style: Theme.of(context).textTheme.bodyLarge,
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: Container(
+          decoration: const BoxDecoration(
+              border: Border(bottom: BorderSide(color: Colors.grey))),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: Text(
+              title,
+              style: Theme.of(context).textTheme.bodyLarge,
+            ),
+          ),
         ),
       ),
     );
