@@ -6,9 +6,15 @@ on:
                 type: string
                 required: true
                 description: please write your name
+                default: Ken
 jobs:
     run:
         runs-on: ubuntu-latest                
         steps:
-            - run: echo "Hello, ${{ inputs.name }}!!"
+        - name: greet
+          run: echo "Hello, ${{ inputs.name }}!!"
+        
+        - name: description
+          run: |
+            echo "This workflow (${{ github.action }}) was triggered by ${{ github.actor }} on ${{ github.ref_name }}."
 
