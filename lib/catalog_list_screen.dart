@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_widget_catalog/catalog_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
+import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
 
 class MyWidgetCatalog extends StatelessWidget {
   const MyWidgetCatalog({super.key});
@@ -24,8 +25,9 @@ class MyWidgetCatalog extends StatelessWidget {
           CategoryTitle(l10n.categoryListTitle).build(context),
           WidgetItem(l10n.gridView,
               () => _navigate(context, const GridViewCatalog())).build(context),
-          WidgetItem(l10n.sliverList, () {}).build(context),
-          WidgetItem(l10n.sliverGrid, () {}).build(context),
+          WidgetItem(
+                  l10n.sliver, () => _navigate(context, const SliverCatalog()))
+              .build(context),
           WidgetItem(l10n.listWheelScrollView, () {}).build(context),
           WidgetItem(l10n.draggableScrollableSheet, () {}).build(context),
           WidgetItem(l10n.flow, () {}).build(context),
@@ -35,6 +37,9 @@ class MyWidgetCatalog extends StatelessWidget {
           WidgetItem(l10n.elevatedButton, () {}).build(context),
           WidgetItem(l10n.outlinedButton, () {}).build(context),
           WidgetItem(l10n.textButton, () {}).build(context),
+          WidgetItem(l10n.radio, () {}).build(context),
+          WidgetItem(l10n.switchButton, () {}).build(context),
+          WidgetItem(l10n.toggleButtons, () {}).build(context),
 
           // TextField系
           CategoryTitle(l10n.categoryTextFieldTitle).build(context),

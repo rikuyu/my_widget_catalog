@@ -1,9 +1,11 @@
 {
+    "@@locale": "ja",
     "appTitle": "Widget Catalog",
     "categoryListTitle": "List",
     "gridView": "GridView",
-    "sliverList": "SliverList",
-    "sliverGrid": "SliverGrid",
+    "sliverItemLabel": "{index}'s item",
+    "sliver": "Sliver",
+    "sliverAppBar": "SliverAppBar",
     "listWheelScrollView": "ListWheelScrollView",
     "draggableScrollableSheet": "DraggableScrollableSheet",
     "flow": "Flow",
@@ -11,5 +13,8 @@
     "elevatedButton": "ElevatedButton",
     "outlinedButton": "OutlinedButton",
     "textButton": "TextButton",
+    "radio": "Radio",
+    "switchButton": "Switch",
+    "toggleButtons": "ToggleButtons",
     "categoryTextFieldTitle": "TextField"
 }
