@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
 
-// https://docs.flutter.dev/cookbook/lists/grid-lists
-// https://flutter.ctrnost.com/basic/layout/gridview/
 class GridViewCatalog extends StatelessWidget {
   const GridViewCatalog({super.key});
 

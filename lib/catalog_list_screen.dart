@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_widget_catalog/catalog_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
+import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
 
 class MyWidgetCatalog extends StatelessWidget {
@@ -28,7 +29,9 @@ class MyWidgetCatalog extends StatelessWidget {
           WidgetItem(
                   l10n.sliver, () => _navigate(context, const SliverCatalog()))
               .build(context),
-          WidgetItem(l10n.listWheelScrollView, () {}).build(context),
+          WidgetItem(l10n.listWheelScrollView,
+                  () => _navigate(context, const ListWheelScrollViewCatalog()))
+              .build(context),
           WidgetItem(l10n.draggableScrollableSheet, () {}).build(context),
           WidgetItem(l10n.flow, () {}).build(context),
 
