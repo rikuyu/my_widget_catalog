@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_widget_catalog/catalog_scaffold.dart';
 
 // https://docs.flutter.dev/cookbook/lists/grid-lists
 // https://flutter.ctrnost.com/basic/layout/gridview/
@@ -9,23 +10,8 @@ class GridViewCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          l10n.gridView,
-          style: const TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back,
-            color: Colors.white,
-          ),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-      ),
+    return CatalogScaffold(
+      title: l10n.gridView,
       body: GridView.count(
         crossAxisCount: 3,
         mainAxisSpacing: 4.0,
