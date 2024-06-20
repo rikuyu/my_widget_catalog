@@ -39,11 +39,11 @@ jobs:
   job-2:
     runs-on: ubuntu-latest      
     steps:
-    - name: 2 job (upload and download artifact which is file created in workfile)
+    - name: 2 job (upload artifact which is file created in workfile)
       run: |
         sleep 10
         echo "This is job-2"
-        echo "Hello! ${{ github.repository_owner }} in ${{ github.repository }}. $(date +"%Y-%m-%d %H:%M:%S")" > sample.txt
+        echo "Hello! ${{ github.repository_owner }} in ${{ github.repository }}. $(TZ=Asia/Tokyo date +"%Y-%m-%d %H:%M:%S")" > sample.txt
     - uses: actions/upload-artifact@v4
       with:
         name: sample-artifact
@@ -61,7 +61,7 @@ jobs:
         TEST_RESULT: ${{ steps.third-job-id.outputs.hoge }}
       run: echo "${TEST_RESULT}" && echo "hoge=xyz" > "${GITHUB_OUTPUT}"
     outputs:
-      test: ${{ steps.third-job-id.outputs.hoge }}
+      test-data: ${{ steps.third-job-id.outputs.hoge }}
 
   job-4:
     runs-on: ubuntu-latest
@@ -69,7 +69,7 @@ jobs:
     steps:
     - name: 4 job (read outputs)
       env:
-        JOB_3_RESULT: ${{ needs.job-3.outputs.test.hoge }}
+        JOB_3_RESULT: ${{ needs.job-3.outputs.test-data }}
       run: | 
         sleep 10
         echo github.event_name = ${{ github.event_name }}
