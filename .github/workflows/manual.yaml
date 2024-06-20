@@ -7,21 +7,24 @@ on:
         required: true
         description: please write your name
         default: Ken
+concurrency:
+  group: ${{ github.workflow }}-${{github.ref}}
+  cancel-in-progress: true
 jobs:
   run:
     runs-on: ubuntu-latest      
-    timeout-minutes: 1
+    timeout-minutes: 3
     steps:
     - name: sleep if necessary
       if: ${{ inputs.name == 'Ken' }} 
       run: |
-        echo sleep 2 minutes if inputs name == default value
-        sleep 120
+        echo sleep 4 minutes if inputs name == default value
+        sleep 240
     
     - name: greet
       run: echo "Hello, ${{ inputs.name }}!!"
         
     - name: description
       run: |
-        echo "This workflow (${{ github.action }}) was triggered by ${{ github.actor }} on ${{ github.ref_name }}."
+        echo "This workflow was triggered by ${{ github.actor }} on ${{ github.ref_name }}."
 
