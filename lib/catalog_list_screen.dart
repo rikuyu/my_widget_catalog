@@ -24,35 +24,27 @@ class MyWidgetCatalog extends StatelessWidget {
         children: [
           // List系
           CategoryTitle(l10n.categoryListTitle).build(context),
-          WidgetItem(l10n.gridView,
-              () => _navigate(context, const GridViewCatalog())).build(context),
+          WidgetItem(l10n.gridView, const GridViewCatalog()).build(context),
+          WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
           WidgetItem(
-                  l10n.sliver, () => _navigate(context, const SliverCatalog()))
+                  l10n.listWheelScrollView, const ListWheelScrollViewCatalog())
               .build(context),
-          WidgetItem(l10n.listWheelScrollView,
-                  () => _navigate(context, const ListWheelScrollViewCatalog()))
-              .build(context),
-          WidgetItem(l10n.draggableScrollableSheet, () {}).build(context),
-          WidgetItem(l10n.flow, () {}).build(context),
+          WidgetItem(l10n.draggableScrollableSheet).build(context),
+          WidgetItem(l10n.flow).build(context),
 
           // Button系
           CategoryTitle(l10n.categoryButtonTitle).build(context),
-          WidgetItem(l10n.elevatedButton, () {}).build(context),
-          WidgetItem(l10n.outlinedButton, () {}).build(context),
-          WidgetItem(l10n.textButton, () {}).build(context),
-          WidgetItem(l10n.radio, () {}).build(context),
-          WidgetItem(l10n.switchButton, () {}).build(context),
-          WidgetItem(l10n.toggleButtons, () {}).build(context),
+          WidgetItem(l10n.elevatedButton).build(context),
+          WidgetItem(l10n.outlinedButton).build(context),
+          WidgetItem(l10n.textButton).build(context),
+          WidgetItem(l10n.radio).build(context),
+          WidgetItem(l10n.switchButton).build(context),
+          WidgetItem(l10n.toggleButtons).build(context),
 
           // TextField系
           CategoryTitle(l10n.categoryTextFieldTitle).build(context),
         ],
       ),
     );
-  }
-
-  void _navigate(BuildContext context, Widget catalogPage) {
-    Navigator.of(context)
-        .push(MaterialPageRoute(builder: (context) => catalogPage));
   }
 }

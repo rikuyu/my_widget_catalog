@@ -24,14 +24,20 @@ class CategoryTitle implements CatalogItem {
 }
 
 class WidgetItem implements CatalogItem {
-  const WidgetItem(this.title, this.onTap);
+  WidgetItem(this.title, [this.destination]);
+
   final String title;
-  final VoidCallback onTap;
+  Widget? destination;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        if (destination != null) {
+          Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => destination!));
+        }
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Container(
