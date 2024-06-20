@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_widget_catalog/catalog_list_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 void main() {
   runApp(const MyWidgetCatalogApp());
@@ -16,7 +17,8 @@ class MyWidgetCatalogApp extends StatelessWidget {
       localizationsDelegates: L10n.localizationsDelegates,
       supportedLocales: L10n.supportedLocales,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: CatalogColor.primaryContainer),
         useMaterial3: true,
       ),
       home: const MyWidgetCatalog(),

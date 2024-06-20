@@ -33,13 +33,13 @@ class ListWheelScrollViewCatalog extends StatelessWidget {
   Color getColor(int index) {
     switch (index % 3) {
       case 0:
-        return CatalogColor.primary;
+        return CatalogColor.green80;
       case 1:
-        return CatalogColor.primaryFixedDim;
+        return CatalogColor.green50;
       case 2:
-        return CatalogColor.onPrimaryContainer;
+        return CatalogColor.green20;
       default:
-        return CatalogColor.onPrimary;
+        return CatalogColor.black100;
     }
   }
 }

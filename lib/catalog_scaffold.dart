@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class CatalogScaffold extends StatelessWidget {
   const CatalogScaffold({required this.title, required this.body, super.key});
@@ -12,13 +13,13 @@ class CatalogScaffold extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           title,
-          style: const TextStyle(color: Colors.white),
+          style: const TextStyle(color: CatalogColor.inversePrimary),
         ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: CatalogColor.primaryContainer,
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back,
-            color: Colors.white,
+            color: CatalogColor.inversePrimary,
           ),
           onPressed: () {
             Navigator.of(context).pop();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 abstract class CatalogItem {
   Widget build(BuildContext context);
@@ -14,10 +15,10 @@ class CategoryTitle implements CatalogItem {
       padding: const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 0),
       child: Text(
         title,
-        style: Theme.of(context).textTheme.labelLarge?.copyWith(
-              color: Colors.blue,
-              fontWeight: FontWeight.bold,
-            ),
+        style: const TextStyle(
+          fontWeight: FontWeight.bold,
+          color: CatalogColor.primaryContainer,
+        ),
       ),
     );
   }
@@ -42,7 +43,7 @@ class WidgetItem implements CatalogItem {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Container(
           decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: Colors.grey))),
+              border: Border(bottom: BorderSide(color: CatalogColor.border))),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: Text(
