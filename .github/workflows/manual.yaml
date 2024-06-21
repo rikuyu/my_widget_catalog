@@ -1,4 +1,13 @@
 name: Manual
+
+# timeout
+# cancel previous workflow
+# GITHUB_OUTPUT を使ったstep間のデータの引き渡し
+# outputs を使ったjob間のデータの引き渡し
+# choice input
+# upload/download artifact
+# 並列実行
+
 on: 
   workflow_dispatch:
     inputs:
