@@ -29,26 +29,49 @@ class SliverCatalog extends StatelessWidget {
               },
             ),
           ),
+          SliverToBoxAdapter(
+              child: Container(
+            color: CatalogColor.primaryContainer,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 32),
+              child: Center(
+                child: Text(
+                  l10n.sliverToBoxAdapter,
+                  style: const TextStyle(
+                      fontSize: 20.0,
+                      color: CatalogColor.inversePrimary,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.none),
+                ),
+              ),
+            ),
+          )),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return Container(
-                  color:
-                      index.isOdd ? CatalogColor.green50 : CatalogColor.green20,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Text(
-                      l10n.sliverItemLabel(index),
-                      style: const TextStyle(
-                          fontSize: 20.0,
-                          color: CatalogColor.inversePrimary,
-                          fontWeight: FontWeight.normal,
-                          decoration: TextDecoration.none),
-                    ),
-                  ),
-                );
+                return _listTile(index, l10n);
               },
               childCount: 10,
+            ),
+          ),
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: CustomSliverHeaderDelegate(
+              minHeight: 120.0,
+              maxHeight: 120.0,
+              child: Container(
+                color: CatalogColor.primaryContainer,
+                child: Center(
+                  child: Text(
+                    l10n.sliverPersistentHeader,
+                    style: const TextStyle(
+                        fontSize: 20.0,
+                        color: CatalogColor.inversePrimary,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.none),
+                  ),
+                ),
+              ),
             ),
           ),
           SliverPadding(
@@ -56,22 +79,9 @@ class SliverCatalog extends StatelessWidget {
             sliver: SliverGrid(
               delegate: SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  return Container(
-                      color: index.isOdd
-                          ? CatalogColor.green50
-                          : CatalogColor.green20,
-                      child: Center(
-                        child: Text(
-                          index.toString(),
-                          style: const TextStyle(
-                              fontSize: 20.0,
-                              color: CatalogColor.inversePrimary,
-                              fontWeight: FontWeight.normal,
-                              decoration: TextDecoration.none),
-                        ),
-                      ));
+                  return _gridTile(index);
                 },
-                childCount: 21,
+                childCount: 27,
               ),
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 160.0,
@@ -84,5 +94,68 @@ class SliverCatalog extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Widget _listTile(int index, L10n l10n) {
+    return Container(
+      color: index.isOdd ? CatalogColor.green30 : CatalogColor.green10,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Text(
+          l10n.sliverItemLabel(index),
+          style: const TextStyle(
+              fontSize: 20.0,
+              color: CatalogColor.inversePrimary,
+              fontWeight: FontWeight.normal,
+              decoration: TextDecoration.none),
+        ),
+      ),
+    );
+  }
+
+  Widget _gridTile(int index) {
+    return Container(
+        color: index.isOdd ? CatalogColor.green30 : CatalogColor.green10,
+        child: Center(
+          child: Text(
+            index.toString(),
+            style: const TextStyle(
+                fontSize: 20.0,
+                color: CatalogColor.inversePrimary,
+                fontWeight: FontWeight.normal,
+                decoration: TextDecoration.none),
+          ),
+        ));
+  }
+}
+
+class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
+  final double maxHeight;
+  final double minHeight;
+  final Widget child;
+
+  CustomSliverHeaderDelegate({
+    required this.maxHeight,
+    required this.minHeight,
+    required this.child,
+  });
+
+  @override
+  double get minExtent => minHeight;
+
+  @override
+  double get maxExtent => maxHeight;
+
+  @override
+  Widget build(
+      BuildContext context, double shrinkOffset, bool overlapsContent) {
+    return child;
+  }
+
+  @override
+  bool shouldRebuild(CustomSliverHeaderDelegate oldDelegate) {
+    return maxHeight != oldDelegate.maxHeight ||
+        minHeight != oldDelegate.minHeight ||
+        child != oldDelegate.child;
   }
 }

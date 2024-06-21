@@ -36,7 +36,7 @@ class CatalogColor {
   static const inverseOnSurface = orange60;
   static const inversePrimary = white100;
 
-  static const border = gray80;
+  static const border = gray20;
 
   // green
   static const green100 = Color(0xff0f5c1f);

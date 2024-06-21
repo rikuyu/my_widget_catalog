@@ -25,12 +25,10 @@ class MyWidgetCatalog extends StatelessWidget {
           // List系
           CategoryTitle(l10n.categoryListTitle).build(context),
           WidgetItem(l10n.gridView, const GridViewCatalog()).build(context),
-          WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
           WidgetItem(
                   l10n.listWheelScrollView, const ListWheelScrollViewCatalog())
               .build(context),
-          WidgetItem(l10n.draggableScrollableSheet).build(context),
-          WidgetItem(l10n.flow).build(context),
+          WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
 
           // Button系
           CategoryTitle(l10n.categoryButtonTitle).build(context),
