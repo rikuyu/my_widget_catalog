@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_widget_catalog/catalog_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/button/elevated_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
@@ -18,7 +20,7 @@ class MyWidgetCatalog extends StatelessWidget {
           l10n.appTitle,
           style: const TextStyle(color: Colors.white),
         ),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: CatalogColor.primaryContainer,
       ),
       body: ListView(
         children: [
@@ -32,7 +34,8 @@ class MyWidgetCatalog extends StatelessWidget {
 
           // Button系
           CategoryTitle(l10n.categoryButtonTitle).build(context),
-          WidgetItem(l10n.elevatedButton).build(context),
+          WidgetItem(l10n.elevatedButton, const ElevatedButtonCatalog())
+              .build(context),
           WidgetItem(l10n.outlinedButton).build(context),
           WidgetItem(l10n.textButton).build(context),
           WidgetItem(l10n.radio).build(context),

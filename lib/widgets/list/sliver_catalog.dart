@@ -13,7 +13,7 @@ class SliverCatalog extends StatelessWidget {
       child: CustomScrollView(
         slivers: [
           SliverAppBar(
-            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            backgroundColor: CatalogColor.primaryContainer,
             title: Text(
               l10n.sliverAppBar,
               style: const TextStyle(color: CatalogColor.inversePrimary),
@@ -31,7 +31,7 @@ class SliverCatalog extends StatelessWidget {
           ),
           SliverToBoxAdapter(
               child: Container(
-            color: CatalogColor.primaryContainer,
+            color: CatalogColor.green70,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 32),
               child: Center(
@@ -60,7 +60,7 @@ class SliverCatalog extends StatelessWidget {
               minHeight: 120.0,
               maxHeight: 120.0,
               child: Container(
-                color: CatalogColor.primaryContainer,
+                color: CatalogColor.green70,
                 child: Center(
                   child: Text(
                     l10n.sliverPersistentHeader,
