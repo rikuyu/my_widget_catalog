@@ -21,7 +21,7 @@ class CatalogColor {
   static const error = pink50;
   static const onError = white70Alpha;
   static const errorContainer = pink30;
-  static const onErrorContainer = gray90;
+  static const onErrorContainer = white100;
 
   static const outline = gray60;
   static const background = gray10;
