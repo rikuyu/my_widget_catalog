@@ -63,18 +63,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 3 job (write and read GITHUB_OUTPUT, write outputs)
-      id: third-job-1
-      run: |
-        echo "hoge=abc" >> "$GITHUB_OUTPUT" && sleep 5
+      id: third-job-step-1
+      run: echo "hoge=abc" >> "$GITHUB_OUTPUT" && sleep 5
     - name: overwrite hoge
-      id: third-job-2
+      id: third-job-step-2
       env:
-        TEST_RESULT: ${{ steps.third-job-1.outputs.hoge }}
+        TEST_RESULT: ${{ steps.third-job-step-1.outputs.hoge }}
       run: |
         echo "TEST_RESULT => ${TEST_RESULT}"
         echo "hoge=xyz" >> "$GITHUB_OUTPUT"
     outputs:
-      test-data: ${{ steps.third-job-2.outputs.hoge }}
+      test-data: ${{ steps.third-job-step-2.outputs.hoge }}
 
   job-4:
     runs-on: ubuntu-latest
