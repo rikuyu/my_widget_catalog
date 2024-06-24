@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:my_widget_catalog/widgets/button/elevated_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/outlined_button_catalog.dart';
+import 'package:my_widget_catalog/widgets/button/text_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
@@ -28,18 +29,14 @@ class MyWidgetCatalog extends StatelessWidget {
           // List系
           CategoryTitle(l10n.categoryListTitle).build(context),
           WidgetItem(l10n.gridView, const GridViewCatalog()).build(context),
-          WidgetItem(
-                  l10n.listWheelScrollView, const ListWheelScrollViewCatalog())
-              .build(context),
+          WidgetItem(l10n.listWheelScrollView, const ListWheelScrollViewCatalog()).build(context),
           WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
 
           // Button系
           CategoryTitle(l10n.categoryButtonTitle).build(context),
-          WidgetItem(l10n.elevatedButton, const ElevatedButtonCatalog())
-              .build(context),
-          WidgetItem(l10n.outlinedButton, const OutlinedButtonCatalog())
-              .build(context),
-          WidgetItem(l10n.textButton).build(context),
+          WidgetItem(l10n.elevatedButton, const ElevatedButtonCatalog()).build(context),
+          WidgetItem(l10n.outlinedButton, const OutlinedButtonCatalog()).build(context),
+          WidgetItem(l10n.textButton, const TextButtonCatalog()).build(context),
           WidgetItem(l10n.radio).build(context),
           WidgetItem(l10n.switchButton).build(context),
           WidgetItem(l10n.toggleButtons).build(context),
