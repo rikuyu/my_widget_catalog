@@ -20,6 +20,7 @@
     "textButton": "TextButton",
     "checkbox": "Checkbox",
     "radio": "Radio",
+    "radioListTile": "RadioListTile",
     "switchButton": "Switch",
     "toggleButtons": "ToggleButtons",
     "categoryTextFieldTitle": "TextField"
