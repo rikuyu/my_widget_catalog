@@ -22,14 +22,14 @@ class TextButtonCatalog extends StatelessWidget {
                     foregroundColor: CatalogColor.primaryContainer,
                   ),
                   child: Text(
-                    l10n.buttonEnable,
+                    l10n.labelEnable,
                     style: labelStyle,
                   )),
               const SizedBox(height: 20.0),
               TextButton(
                   onPressed: null,
                   child: Text(
-                    l10n.buttonDisable,
+                    l10n.labelDisable,
                     style: labelStyle,
                   )),
               const SizedBox(height: 20.0),
@@ -39,7 +39,7 @@ class TextButtonCatalog extends StatelessWidget {
                     disabledForegroundColor: CatalogColor.errorContainer,
                   ),
                   child: Text(
-                    l10n.buttonDisable,
+                    l10n.labelDisable,
                     style: labelStyle,
                   )),
               const SizedBox(height: 20.0),
@@ -48,7 +48,7 @@ class TextButtonCatalog extends StatelessWidget {
                   style: TextButton.styleFrom(foregroundColor: CatalogColor.primaryContainer),
                   icon: const Icon(Icons.add),
                   label: Text(
-                    l10n.buttonEnable,
+                    l10n.labelEnable,
                     style: labelStyle,
                   )),
             ])));

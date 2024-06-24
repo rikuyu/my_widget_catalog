@@ -6,10 +6,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class OutlinedButtonCatalog extends StatelessWidget {
   const OutlinedButtonCatalog({super.key});
 
-  final labelStyle = const TextStyle(
-      fontSize: 20.0,
-      fontWeight: FontWeight.normal,
-      decoration: TextDecoration.none);
+  final labelStyle = const TextStyle(fontSize: 20.0, fontWeight: FontWeight.normal, decoration: TextDecoration.none);
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +21,9 @@ class OutlinedButtonCatalog extends StatelessWidget {
                   onPressed: () {},
                   style: OutlinedButton.styleFrom(
                     foregroundColor: CatalogColor.primaryContainer,
-                    side:
-                        const BorderSide(color: CatalogColor.primaryContainer),
+                    side: const BorderSide(color: CatalogColor.primaryContainer),
                   ),
-                  child: Text(l10n.buttonEnable, style: labelStyle)),
+                  child: Text(l10n.labelEnable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton(
                   onPressed: () {},
@@ -41,7 +37,7 @@ class OutlinedButtonCatalog extends StatelessWidget {
                     shape: const CircleBorder(),
                     fixedSize: const Size(120, 120),
                   ),
-                  child: Text(l10n.buttonEnable, style: labelStyle)),
+                  child: Text(l10n.labelEnable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton(
                   onPressed: null,
@@ -51,7 +47,7 @@ class OutlinedButtonCatalog extends StatelessWidget {
                       color: CatalogColor.errorContainer,
                     ),
                   ),
-                  child: Text(l10n.buttonDisable, style: labelStyle)),
+                  child: Text(l10n.labelDisable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton.icon(
                   onPressed: () {},
@@ -61,18 +57,16 @@ class OutlinedButtonCatalog extends StatelessWidget {
                       color: CatalogColor.primaryContainer,
                     ),
                   ),
-                  icon: const Icon(Icons.add,
-                      color: CatalogColor.primaryContainer),
-                  label: Text(l10n.buttonEnable, style: labelStyle)),
+                  icon: const Icon(Icons.add, color: CatalogColor.primaryContainer),
+                  label: Text(l10n.labelEnable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton(
                   onPressed: null,
                   style: OutlinedButton.styleFrom(
                     foregroundColor: CatalogColor.primaryContainer,
-                    shape: const StadiumBorder(
-                        side: BorderSide(color: CatalogColor.primaryContainer)),
+                    shape: const StadiumBorder(side: BorderSide(color: CatalogColor.primaryContainer)),
                   ),
-                  child: Text(l10n.buttonDisable, style: labelStyle)),
+                  child: Text(l10n.labelDisable, style: labelStyle)),
             ],
           ),
         ));

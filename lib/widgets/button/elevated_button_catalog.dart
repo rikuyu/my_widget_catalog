@@ -28,7 +28,7 @@ class ElevatedButtonCatalog extends StatelessWidget {
                 foregroundColor: CatalogColor.onPrimaryContainer,
               ),
               child: Text(
-                l10n.buttonEnable,
+                l10n.labelEnable,
                 style: labelStyle,
               ),
             ),
@@ -49,7 +49,7 @@ class ElevatedButtonCatalog extends StatelessWidget {
             ElevatedButton(
                 onPressed: null,
                 child: Text(
-                  l10n.buttonDisable,
+                  l10n.labelDisable,
                   style: labelStyle,
                 )),
             const SizedBox(height: 20.0),
@@ -60,7 +60,7 @@ class ElevatedButtonCatalog extends StatelessWidget {
                   disabledBackgroundColor: CatalogColor.errorContainer,
                 ),
                 child: Text(
-                  l10n.buttonDisable,
+                  l10n.labelDisable,
                   style: labelStyle,
                 )),
             const SizedBox(height: 20.0),
@@ -72,14 +72,14 @@ class ElevatedButtonCatalog extends StatelessWidget {
                   elevation: 12.0,
                 ),
                 child: Text(
-                  l10n.buttonEnable,
+                  l10n.labelEnable,
                   style: labelStyle,
                 )),
             const SizedBox(height: 20.0),
             ElevatedButton.icon(
               onPressed: () {},
               icon: const Icon(Icons.add),
-              label: Text(l10n.buttonEnable, style: labelStyle),
+              label: Text(l10n.labelEnable, style: labelStyle),
               style: ElevatedButton.styleFrom(
                 backgroundColor: CatalogColor.primaryContainer,
                 foregroundColor: CatalogColor.onPrimaryContainer,

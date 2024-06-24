@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_widget_catalog/catalog_divider.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
@@ -16,10 +17,7 @@ class RadioCatalog extends StatelessWidget {
           child: ListView(children: [
             _SimpleRadioCatalog(),
             const SizedBox(height: 30.0),
-            const Divider(
-              height: 1.0,
-              color: CatalogColor.black100,
-            ),
+            const CatalogDivider(),
             const SizedBox(height: 30.0),
             _RadioListTileCatalog(),
           ]),
@@ -31,6 +29,7 @@ enum _Animal {
   dog,
   cat,
   mouse,
+  bird,
 }
 
 class _SimpleRadioCatalog extends StatefulWidget {
@@ -85,9 +84,28 @@ class _SimpleRadioCatalogState extends State<_SimpleRadioCatalog> {
             )
           ],
         ),
+        const SizedBox(height: 8.0),
         Row(
           children: [
             Radio(value: _Animal.mouse, groupValue: _animal, onChanged: null),
+            const SizedBox(width: 8.0),
+            Text(
+              _Animal.mouse.name,
+              style: labelStyle,
+            )
+          ],
+        ),
+        const SizedBox(height: 8.0),
+        Row(
+          children: [
+            Radio.adaptive(
+                value: _Animal.bird,
+                groupValue: _animal,
+                onChanged: (val) {
+                  setState(() {
+                    _animal = val;
+                  });
+                }),
             const SizedBox(width: 8.0),
             Text(
               _Animal.mouse.name,
@@ -100,14 +118,15 @@ class _SimpleRadioCatalogState extends State<_SimpleRadioCatalog> {
   }
 }
 
-enum _GAFA {
+enum _BigTech {
   apple(displayName: "Apple"),
   google(displayName: "Google"),
   facebook(displayName: "Meta"),
   amazon(displayName: "Amazon"),
+  nvidia(displayName: "NVIDIA"),
   ;
 
-  const _GAFA({required this.displayName});
+  const _BigTech({required this.displayName});
 
   final String displayName;
 }
@@ -118,7 +137,7 @@ class _RadioListTileCatalog extends StatefulWidget {
 }
 
 class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
-  _GAFA? _company = _GAFA.apple;
+  _BigTech? _company = _BigTech.apple;
 
   final labelStyle = const TextStyle(
       fontSize: 20.0, color: CatalogColor.primary, fontWeight: FontWeight.normal, decoration: TextDecoration.none);
@@ -131,63 +150,73 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
         RadioListTile(
             activeColor: CatalogColor.primaryContainer,
             title: Text(
-              _GAFA.google.displayName,
+              _BigTech.google.displayName,
               style: labelStyle,
             ),
-            value: _GAFA.google,
+            value: _BigTech.google,
             groupValue: _company,
             onChanged: (val) {
               setState(() {
                 _company = val;
               });
             }),
-        const Divider(
-          height: 1.0,
-          color: CatalogColor.border,
-        ),
+        const CatalogDivider(),
         RadioListTile(
             activeColor: CatalogColor.primaryContainer,
             title: Text(
-              _GAFA.apple.displayName,
+              _BigTech.apple.displayName,
               style: labelStyle,
             ),
             subtitle: Text(
               l10n.radioListTile,
               style: labelStyle.copyWith(fontSize: 14.0),
             ),
-            value: _GAFA.apple,
+            secondary: const Icon(
+              Icons.add,
+              color: CatalogColor.primaryContainer,
+            ),
+            controlAffinity: ListTileControlAffinity.trailing,
+            value: _BigTech.apple,
             groupValue: _company,
             onChanged: (val) {
               setState(() {
                 _company = val;
               });
             }),
-        const Divider(
-          height: 1.0,
-          color: CatalogColor.border,
-        ),
+        const CatalogDivider(),
         RadioListTile(
             title: Text(
-              _GAFA.facebook.displayName,
+              _BigTech.facebook.displayName,
               style: labelStyle.copyWith(
                 color: CatalogColor.gray40,
               ),
             ),
-            value: _GAFA.facebook,
+            value: _BigTech.facebook,
             groupValue: _company,
             onChanged: null),
-        const Divider(
-          height: 1.0,
-          color: CatalogColor.border,
-        ),
+        const CatalogDivider(),
         RadioListTile(
             tileColor: CatalogColor.primaryContainer,
             title: Text(
-              _GAFA.amazon.displayName,
+              _BigTech.amazon.displayName,
               style: labelStyle.copyWith(color: CatalogColor.onPrimaryContainer),
             ),
             fillColor: MaterialStateProperty.all(CatalogColor.onPrimaryContainer),
-            value: _GAFA.amazon,
+            value: _BigTech.amazon,
+            groupValue: _company,
+            onChanged: (val) {
+              setState(() {
+                _company = val;
+              });
+            }),
+        const CatalogDivider(),
+        RadioListTile.adaptive(
+            activeColor: CatalogColor.primaryContainer,
+            title: Text(
+              _BigTech.nvidia.displayName,
+              style: labelStyle,
+            ),
+            value: _BigTech.nvidia,
             groupValue: _company,
             onChanged: (val) {
               setState(() {
