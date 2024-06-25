@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
+import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class TextButtonCatalog extends StatelessWidget {
@@ -46,7 +48,10 @@ class TextButtonCatalog extends StatelessWidget {
               TextButton.icon(
                   onPressed: () {},
                   style: TextButton.styleFrom(foregroundColor: CatalogColor.primaryContainer),
-                  icon: const Icon(Icons.add),
+                  icon: SvgPicture.asset(
+                    Assets.downloadLine,
+                    colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
+                  ),
                   label: Text(
                     l10n.labelEnable,
                     style: labelStyle,

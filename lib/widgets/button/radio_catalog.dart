@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/catalog_divider.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class RadioCatalog extends StatelessWidget {
@@ -171,9 +173,9 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
               l10n.radioListTile,
               style: labelStyle.copyWith(fontSize: 14.0),
             ),
-            secondary: const Icon(
-              Icons.add,
-              color: CatalogColor.primaryContainer,
+            secondary: SvgPicture.asset(
+              Assets.lawsLine,
+              colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
             ),
             controlAffinity: ListTileControlAffinity.trailing,
             value: _BigTech.apple,

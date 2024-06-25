@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
+import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -57,7 +59,10 @@ class OutlinedButtonCatalog extends StatelessWidget {
                       color: CatalogColor.primaryContainer,
                     ),
                   ),
-                  icon: const Icon(Icons.add, color: CatalogColor.primaryContainer),
+                  icon: SvgPicture.asset(
+                    Assets.certificationWithSealLine,
+                    colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
+                  ),
                   label: Text(l10n.labelEnable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton(

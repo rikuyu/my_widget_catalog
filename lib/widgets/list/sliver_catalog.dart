@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class SliverCatalog extends StatelessWidget {
@@ -20,9 +22,9 @@ class SliverCatalog extends StatelessWidget {
             ),
             expandedHeight: 200,
             leading: IconButton(
-              icon: const Icon(
-                Icons.arrow_back,
-                color: CatalogColor.inversePrimary,
+              icon: SvgPicture.asset(
+                Assets.arrowLeftLine,
+                colorFilter: const ColorFilter.mode(CatalogColor.inversePrimary, BlendMode.srcIn),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -147,15 +149,12 @@ class CustomSliverHeaderDelegate extends SliverPersistentHeaderDelegate {
   double get maxExtent => maxHeight;
 
   @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
+  Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     return child;
   }
 
   @override
   bool shouldRebuild(CustomSliverHeaderDelegate oldDelegate) {
-    return maxHeight != oldDelegate.maxHeight ||
-        minHeight != oldDelegate.minHeight ||
-        child != oldDelegate.child;
+    return maxHeight != oldDelegate.maxHeight || minHeight != oldDelegate.minHeight || child != oldDelegate.child;
   }
 }

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/catalog_divider.dart';
 import 'package:my_widget_catalog/catalog_scaffold.dart';
+import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class CheckBoxCatalog extends StatefulWidget {
@@ -90,10 +92,8 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                 const CatalogDivider(),
                 CheckboxListTile(
                   activeColor: CatalogColor.primaryContainer,
-                  secondary: const Icon(
-                    Icons.add,
-                    color: CatalogColor.primaryContainer,
-                  ),
+                  secondary: SvgPicture.asset(Assets.stampLine,
+                      colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn)),
                   title: Text(
                     l10n.labelEnable,
                     style: labelStyle,
