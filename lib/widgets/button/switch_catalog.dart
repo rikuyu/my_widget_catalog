@@ -4,7 +4,6 @@ import 'package:my_widget_catalog/catalog_scaffold.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/catalog_divider.dart';
-import 'package:my_widget_catalog/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 
 class SwitchCatalog extends StatefulWidget {
