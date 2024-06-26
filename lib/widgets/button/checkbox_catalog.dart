@@ -14,7 +14,7 @@ class CheckBoxCatalog extends StatefulWidget {
 }
 
 class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
-  bool? _flag1 = false;
+  bool _flag = false;
 
   final labelStyle = const TextStyle(
       fontSize: 20.0, color: CatalogColor.primary, fontWeight: FontWeight.normal, decoration: TextDecoration.none);
@@ -32,10 +32,10 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                   children: [
                     Checkbox(
                         activeColor: CatalogColor.primaryContainer,
-                        value: _flag1,
-                        onChanged: (val) {
+                        value: _flag,
+                        onChanged: (value) {
                           setState(() {
-                            _flag1 = val!;
+                            _flag = value!;
                           });
                         }),
                     const SizedBox(width: 8.0),
@@ -44,10 +44,10 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                         child: Checkbox(
                             shape: const CircleBorder(),
                             activeColor: CatalogColor.primaryContainer,
-                            value: _flag1,
-                            onChanged: (val) {
+                            value: _flag,
+                            onChanged: (value) {
                               setState(() {
-                                _flag1 = val!;
+                                _flag = value!;
                               });
                             })),
                     const SizedBox(width: 8.0),
@@ -56,10 +56,10 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                     Checkbox(
                         isError: true,
                         activeColor: CatalogColor.primaryContainer,
-                        value: _flag1,
-                        onChanged: (val) {
+                        value: _flag,
+                        onChanged: (value) {
                           setState(() {
-                            _flag1 = val!;
+                            _flag = value!;
                           });
                         }),
                   ],
@@ -70,13 +70,13 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                 CheckboxListTile(
                     activeColor: CatalogColor.primaryContainer,
                     title: Text(
-                      l10n.labelEnable,
+                      "${l10n.checkbox} $_flag",
                       style: labelStyle,
                     ),
-                    value: _flag1,
-                    onChanged: (val) {
+                    value: _flag,
+                    onChanged: (value) {
                       setState(() {
-                        _flag1 = val!;
+                        _flag = value!;
                       });
                     }),
                 const CatalogDivider(),
@@ -84,7 +84,7 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                     title: Text(
                       l10n.labelDisable,
                       style: labelStyle.copyWith(
-                        color: CatalogColor.gray40,
+                        color: CatalogColor.disableColor,
                       ),
                     ),
                     value: false,
@@ -95,17 +95,17 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                   secondary: SvgPicture.asset(Assets.stampLine,
                       colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn)),
                   title: Text(
-                    l10n.labelEnable,
+                    "${l10n.checkbox} $_flag",
                     style: labelStyle,
                   ),
                   subtitle: Text(
                     l10n.checkboxListTile,
                     style: labelStyle.copyWith(fontSize: 14.0),
                   ),
-                  value: _flag1,
-                  onChanged: (val) {
+                  value: _flag,
+                  onChanged: (value) {
                     setState(() {
-                      _flag1 = val!;
+                      _flag = value!;
                     });
                   },
                   controlAffinity: ListTileControlAffinity.leading,

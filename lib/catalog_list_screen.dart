@@ -6,6 +6,7 @@ import 'package:my_widget_catalog/widgets/button/checkbox_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/elevated_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/outlined_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/radio_catalog.dart';
+import 'package:my_widget_catalog/widgets/button/switch_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/text_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
@@ -35,7 +36,7 @@ class MyWidgetCatalog extends StatelessWidget {
           WidgetItem(l10n.textButton, const TextButtonCatalog()).build(context),
           WidgetItem(l10n.radio, const RadioCatalog()).build(context),
           WidgetItem(l10n.checkbox, const CheckBoxCatalog()).build(context),
-          WidgetItem(l10n.switchButton).build(context),
+          WidgetItem(l10n.switchButton, const SwitchCatalog()).build(context),
           WidgetItem(l10n.toggleButtons).build(context),
 
           // List系

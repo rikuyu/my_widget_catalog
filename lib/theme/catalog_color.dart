@@ -38,6 +38,8 @@ class CatalogColor {
 
   static const border = gray20;
 
+  static const disableColor = gray40;
+
   // green
   static const green100 = Color(0xff0f5c1f);
   static const green90 = Color(0xff186b27);
