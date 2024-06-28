@@ -42,7 +42,7 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
               children: [
                 SvgPicture.asset(Assets.historyLine),
                 SvgPicture.asset(Assets.expenditureLine),
-                SvgPicture.asset(Assets.luggageLine),
+                SvgPicture.asset(Assets.codeReaderLine),
                 SvgPicture.asset(Assets.invoiceLine),
                 SvgPicture.asset(Assets.arrivalLine),
               ],

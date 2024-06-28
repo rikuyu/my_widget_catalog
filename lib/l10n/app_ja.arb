@@ -24,5 +24,8 @@
     "radioListTile": "RadioListTile",
     "switchButton": "Switch",
     "toggleButtons": "ToggleButtons",
-    "categoryTextFieldTitle": "TextField"
+    "categoryTextFieldTitle": "Form",
+    "textField": "TextField",
+    "textFormField": "textFormField",
+    "form": "Form"
 }

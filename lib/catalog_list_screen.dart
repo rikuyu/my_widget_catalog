@@ -48,6 +48,9 @@ class MyWidgetCatalog extends StatelessWidget {
 
           // TextField系
           CategoryTitle(l10n.categoryTextFieldTitle).build(context),
+          WidgetItem(l10n.textField).build(context),
+          WidgetItem(l10n.textFormField).build(context),
+          WidgetItem(l10n.form).build(context),
         ],
       ),
     );
