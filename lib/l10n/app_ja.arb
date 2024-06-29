@@ -25,7 +25,8 @@
     "switchButton": "Switch",
     "toggleButtons": "ToggleButtons",
     "categoryTextFieldTitle": "Form",
+    "hintText": "Welcome, {name}!",
     "textField": "TextField",
-    "textFormField": "textFormField",
+    "textFormField": "TextFormField",
     "form": "Form"
 }

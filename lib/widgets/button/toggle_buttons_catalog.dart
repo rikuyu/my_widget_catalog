@@ -113,28 +113,28 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
             ToggleButtons(
               isSelected: List.generate(5, (_) => false),
               onPressed: null,
-              disabledColor: CatalogColor.disableColor,
-              disabledBorderColor: CatalogColor.disableColor,
+              disabledColor: CatalogColor.disable,
+              disabledBorderColor: CatalogColor.disable,
               children: [
                 SvgPicture.asset(
                   Assets.healthLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                 ),
                 SvgPicture.asset(
                   Assets.publicOfferingLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                 ),
                 SvgPicture.asset(
                   Assets.eApplicationLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                 ),
                 SvgPicture.asset(
                   Assets.notificationLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                 ),
                 SvgPicture.asset(
                   Assets.fastTrackLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                 ),
               ],
             ),

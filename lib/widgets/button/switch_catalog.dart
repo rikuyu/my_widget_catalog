@@ -90,10 +90,10 @@ class _SwitchCatalogState extends State<SwitchCatalog> {
                   }),
               const CatalogDivider(),
               SwitchListTile(
-                  title: Text(l10n.labelDisable, style: labelStyle.copyWith(color: CatalogColor.disableColor)),
+                  title: Text(l10n.labelDisable, style: labelStyle.copyWith(color: CatalogColor.disable)),
                   secondary: SvgPicture.asset(
                     Assets.invoiceLine,
-                    colorFilter: const ColorFilter.mode(CatalogColor.disableColor, BlendMode.srcIn),
+                    colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
                   ),
                   controlAffinity: ListTileControlAffinity.trailing,
                   value: false,

@@ -84,7 +84,7 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                     title: Text(
                       l10n.labelDisable,
                       style: labelStyle.copyWith(
-                        color: CatalogColor.disableColor,
+                        color: CatalogColor.disable,
                       ),
                     ),
                     value: false,
