@@ -35,20 +35,18 @@ class WidgetItem implements CatalogItem {
     return InkWell(
       onTap: () {
         if (destination != null) {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => destination!));
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => destination!));
         }
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: Container(
-          decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: CatalogColor.border))),
+          decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: CatalogColor.border))),
           child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12.0),
             child: Text(
               title,
-              style: Theme.of(context).textTheme.bodyLarge,
+              style: const TextStyle(fontWeight: FontWeight.normal, color: CatalogColor.primary, fontSize: 18.0),
             ),
           ),
         ),

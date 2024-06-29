@@ -27,6 +27,7 @@
     "categoryTextFieldTitle": "Form",
     "hintText": "Welcome, {name}!",
     "textField": "TextField",
-    "textFormField": "TextFormField",
+    "textFormField": "TextFormField (Form)",
+    "formErrorText": "Please enter some text",
     "form": "Form"
 }

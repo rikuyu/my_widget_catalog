@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_widget_catalog/catalog_item.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:my_widget_catalog/widgets/button/checkbox_catalog.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_item.dart';
 import 'package:my_widget_catalog/widgets/button/elevated_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/outlined_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/radio_catalog.dart';
@@ -13,6 +13,7 @@ import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_field_catalog.dart';
+import 'package:my_widget_catalog/widgets/textfield/text_form_field_catalog.dart';
 
 class MyWidgetCatalog extends StatelessWidget {
   const MyWidgetCatalog({super.key});
@@ -50,8 +51,7 @@ class MyWidgetCatalog extends StatelessWidget {
           // TextField系
           CategoryTitle(l10n.categoryTextFieldTitle).build(context),
           WidgetItem(l10n.textField, const TextFieldCatalog()).build(context),
-          WidgetItem(l10n.textFormField).build(context),
-          WidgetItem(l10n.form).build(context),
+          WidgetItem(l10n.textFormField, const TextFormFieldCatalog()).build(context),
         ],
       ),
     );

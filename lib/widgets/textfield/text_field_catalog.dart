@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:my_widget_catalog/catalog_scaffold.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
-import 'package:my_widget_catalog/svg_icon.dart';
+import 'package:my_widget_catalog/widgets/common/svg_icon.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class TextFieldCatalog extends StatefulWidget {
@@ -38,9 +38,11 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
             padding: const EdgeInsets.all(24.0),
             child: ListView(children: [
               TextField(
+                autofocus: true,
                 controller: _controller,
                 maxLength: 10,
                 keyboardType: TextInputType.name,
+                textInputAction: TextInputAction.search,
                 decoration: InputDecoration(
                   labelText: l10n.textField,
                   labelStyle: style.copyWith(color: CatalogColor.primaryContainer, fontSize: 18.0),
@@ -51,11 +53,13 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   helperText: l10n.hintText(l10n.textField),
                   helperStyle: style.copyWith(color: CatalogColor.primaryContainer),
                 ),
+                onSubmitted: (value) {},
               ),
               const SizedBox(height: 24.0),
               TextField(
                 controller: _controller,
                 keyboardType: TextInputType.number,
+                textInputAction: TextInputAction.go,
                 decoration: InputDecoration(
                   hintText: l10n.hintText(l10n.textField),
                   hintStyle: style,
@@ -70,12 +74,14 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   fillColor: CatalogColor.green10,
                   filled: true,
                 ),
+                onChanged: (value) {},
               ),
               const SizedBox(height: 24.0),
               TextField(
                 controller: _controller,
                 maxLength: 15,
                 keyboardType: TextInputType.emailAddress,
+                textInputAction: TextInputAction.send,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(color: CatalogColor.primaryContainer),
@@ -127,6 +133,8 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
               TextField(
                 maxLines: 4,
                 controller: _controller,
+                obscureText: true,
+                textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
                   enabledBorder: OutlineInputBorder(

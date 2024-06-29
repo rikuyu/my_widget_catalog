@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:my_widget_catalog/catalog_divider.dart';
-import 'package:my_widget_catalog/catalog_scaffold.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
