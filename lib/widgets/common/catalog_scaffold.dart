@@ -28,7 +28,7 @@ class CatalogScaffold extends StatelessWidget {
           },
         ),
       ),
-      body: body,
+      body: Container(color: CatalogColor.onPrimaryContainer, child: body),
     );
   }
 }

@@ -12,6 +12,7 @@ import 'package:my_widget_catalog/widgets/button/toggle_buttons_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
+import 'package:my_widget_catalog/widgets/others/chip_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_field_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_form_field_catalog.dart';
 
@@ -30,44 +31,47 @@ class MyWidgetCatalog extends StatelessWidget {
         ),
         backgroundColor: CatalogColor.primaryContainer,
       ),
-      body: ListView(
-        children: [
-          // Button系
-          CategoryTitle(l10n.categoryButtonTitle).build(context),
-          WidgetItem(l10n.elevatedButton, const ElevatedButtonCatalog()).build(context),
-          WidgetItem(l10n.outlinedButton, const OutlinedButtonCatalog()).build(context),
-          WidgetItem(l10n.textButton, const TextButtonCatalog()).build(context),
-          WidgetItem(l10n.radio, const RadioCatalog()).build(context),
-          WidgetItem(l10n.checkbox, const CheckBoxCatalog()).build(context),
-          WidgetItem(l10n.switchButton, const SwitchCatalog()).build(context),
-          WidgetItem(l10n.toggleButtons, const ToggleButtonsCatalog()).build(context),
+      body: Container(
+        color: CatalogColor.onPrimaryContainer,
+        child: ListView(
+          children: [
+            // Button系
+            CategoryTitle(l10n.categoryButtonTitle).build(context),
+            WidgetItem(l10n.elevatedButton, const ElevatedButtonCatalog()).build(context),
+            WidgetItem(l10n.outlinedButton, const OutlinedButtonCatalog()).build(context),
+            WidgetItem(l10n.textButton, const TextButtonCatalog()).build(context),
+            WidgetItem(l10n.radio, const RadioCatalog()).build(context),
+            WidgetItem(l10n.checkbox, const CheckBoxCatalog()).build(context),
+            WidgetItem(l10n.switchButton, const SwitchCatalog()).build(context),
+            WidgetItem(l10n.toggleButtons, const ToggleButtonsCatalog()).build(context),
 
-          // List系
-          CategoryTitle(l10n.categoryListTitle).build(context),
-          WidgetItem(l10n.gridView, const GridViewCatalog()).build(context),
-          WidgetItem(l10n.listWheelScrollView, const ListWheelScrollViewCatalog()).build(context),
-          WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
+            // List系
+            CategoryTitle(l10n.categoryListTitle).build(context),
+            WidgetItem(l10n.gridView, const GridViewCatalog()).build(context),
+            WidgetItem(l10n.listWheelScrollView, const ListWheelScrollViewCatalog()).build(context),
+            WidgetItem(l10n.sliver, const SliverCatalog()).build(context),
 
-          // TextField系
-          CategoryTitle(l10n.categoryTextFieldTitle).build(context),
-          WidgetItem(l10n.textField, const TextFieldCatalog()).build(context),
-          WidgetItem(l10n.textFormField, const TextFormFieldCatalog()).build(context),
+            // TextField系
+            CategoryTitle(l10n.categoryTextFieldTitle).build(context),
+            WidgetItem(l10n.textField, const TextFieldCatalog()).build(context),
+            WidgetItem(l10n.textFormField, const TextFormFieldCatalog()).build(context),
 
-          // Icon
-          CategoryTitle(l10n.iconTitle).build(context),
-          WidgetItem(l10n.icon).build(context),
-          WidgetItem(l10n.iconButton).build(context),
-          WidgetItem(l10n.badge).build(context),
+            // Icon
+            CategoryTitle(l10n.iconTitle).build(context),
+            WidgetItem(l10n.icon).build(context),
+            WidgetItem(l10n.iconButton).build(context),
+            WidgetItem(l10n.badge).build(context),
 
-          // その他
-          CategoryTitle(l10n.otherTitle).build(context),
-          WidgetItem(l10n.chip).build(context),
-          WidgetItem(l10n.card).build(context),
-          WidgetItem(l10n.slider).build(context),
-          WidgetItem(l10n.expanded).build(context),
-          WidgetItem(l10n.datePicker).build(context),
-          WidgetItem(l10n.timePicker).build(context),
-        ],
+            // その他
+            CategoryTitle(l10n.otherTitle).build(context),
+            WidgetItem(l10n.chip, const ChipCatalog()).build(context),
+            WidgetItem(l10n.card).build(context),
+            WidgetItem(l10n.slider).build(context),
+            WidgetItem(l10n.expanded).build(context),
+            WidgetItem(l10n.datePicker).build(context),
+            WidgetItem(l10n.timePicker).build(context),
+          ],
+        ),
       ),
     );
   }
