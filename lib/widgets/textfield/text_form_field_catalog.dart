@@ -31,15 +31,17 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
             padding: const EdgeInsets.all(24.0),
             child: Form(
                 key: _formKey,
-                child: Column(
+                child: ListView(
                   children: [
                     CatalogForm(
                       FormType.name,
                       label: l10n.name,
                       prefixIconAsset: Assets.meLine,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return l10n.formErrorText(l10n.name);
+                        const pattern = r'^.{1,8}$';
+                        final regexp = RegExp(pattern);
+                        if (value == null || !regexp.hasMatch(value)) {
+                          return l10n.nameErrorText;
                         }
                         return null;
                       },
@@ -50,8 +52,11 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
                       label: l10n.email,
                       prefixIconAsset: Assets.inboxLine,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return l10n.formErrorText(l10n.email);
+                        const pattern =
+                            r"^[\w!#$%&'*+/=?`{|}~^-]+(\.[\w!#$%&'*+/=?`{|}~^-]+)*@([A-Z0-9-]{2,6})\.(?:\w{3}|\w{2}\.\w{2})$";
+                        final regexp = RegExp(caseSensitive: false, pattern);
+                        if (value == null || !regexp.hasMatch(value)) {
+                          return l10n.emailErrorText;
                         }
                         return null;
                       },
@@ -62,8 +67,10 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
                       label: l10n.phoneNumber,
                       prefixIconAsset: Assets.smartphoneLine,
                       validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return l10n.formErrorText(l10n.phoneNumber);
+                        const pattern = r'^\d{2,8}';
+                        final regexp = RegExp(pattern);
+                        if (value == null || !regexp.hasMatch(value)) {
+                          return l10n.phoneNumber;
                         }
                         return null;
                       },
@@ -71,24 +78,33 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
                     const SizedBox(height: 20),
                     CatalogForm(FormType.password, label: l10n.password, prefixIconAsset: Assets.passwordLine,
                         validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return l10n.formErrorText(l10n.password);
+                      const pattern = r'[a-z0-9]{6,10}';
+                      final regexp = RegExp(pattern);
+                      if (value == null || !regexp.hasMatch(value)) {
+                        return l10n.passwordErrorText;
                       }
                       return null;
                     }, obscure: true),
                     const SizedBox(height: 20),
-                    ElevatedButton.icon(
-                        onPressed: () {
-                          _formKey.currentState?.validate();
-                        },
-                        icon: const CatalogSvgIcon(
-                          Assets.arrowRightLine,
-                          color: CatalogColor.onPrimaryContainer,
-                        ),
-                        label: Text(
-                          l10n.ok,
-                          style: style.copyWith(color: CatalogColor.onPrimaryContainer),
-                        ))
+                    Row(
+                      children: [
+                        const Spacer(),
+                        ElevatedButton.icon(
+                          style: ElevatedButton.styleFrom(backgroundColor: CatalogColor.primaryContainer),
+                          onPressed: () {
+                            _formKey.currentState?.validate();
+                          },
+                          label: Text(
+                            l10n.ok,
+                            style: style.copyWith(color: CatalogColor.onPrimaryContainer),
+                          ),
+                          icon: const CatalogSvgIcon(
+                            Assets.arrowRightLine,
+                            color: CatalogColor.onPrimaryContainer,
+                          ),
+                        )
+                      ],
+                    )
                   ],
                 ))));
   }
@@ -122,6 +138,7 @@ class CatalogForm extends StatelessWidget {
     return TextFormField(
       validator: validator,
       keyboardType: type.inputType,
+      textInputAction: TextInputAction.next,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: CatalogColor.primaryContainer),
@@ -132,6 +149,10 @@ class CatalogForm extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
         ),
         errorBorder: OutlineInputBorder(
+          borderSide: const BorderSide(color: CatalogColor.error),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: CatalogColor.error),
           borderRadius: BorderRadius.circular(10),
         ),
