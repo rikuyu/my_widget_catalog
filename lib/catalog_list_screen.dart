@@ -52,6 +52,21 @@ class MyWidgetCatalog extends StatelessWidget {
           CategoryTitle(l10n.categoryTextFieldTitle).build(context),
           WidgetItem(l10n.textField, const TextFieldCatalog()).build(context),
           WidgetItem(l10n.textFormField, const TextFormFieldCatalog()).build(context),
+
+          // Icon
+          CategoryTitle(l10n.iconTitle).build(context),
+          WidgetItem(l10n.icon).build(context),
+          WidgetItem(l10n.iconButton).build(context),
+          WidgetItem(l10n.badge).build(context),
+
+          // その他
+          CategoryTitle(l10n.otherTitle).build(context),
+          WidgetItem(l10n.chip).build(context),
+          WidgetItem(l10n.card).build(context),
+          WidgetItem(l10n.slider).build(context),
+          WidgetItem(l10n.expanded).build(context),
+          WidgetItem(l10n.datePicker).build(context),
+          WidgetItem(l10n.timePicker).build(context),
         ],
       ),
     );
