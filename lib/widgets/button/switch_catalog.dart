@@ -5,6 +5,7 @@ import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class SwitchCatalog extends StatefulWidget {
   const SwitchCatalog({super.key});
@@ -91,10 +92,7 @@ class _SwitchCatalogState extends State<SwitchCatalog> {
               const CatalogDivider(),
               SwitchListTile(
                   title: Text(l10n.labelDisable, style: labelStyle.copyWith(color: CatalogColor.disable)),
-                  secondary: SvgPicture.asset(
-                    Assets.invoiceLine,
-                    colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                  ),
+                  secondary: const CatalogSvgIcon(Assets.invoiceLine),
                   controlAffinity: ListTileControlAffinity.trailing,
                   value: false,
                   onChanged: null),
@@ -102,10 +100,7 @@ class _SwitchCatalogState extends State<SwitchCatalog> {
               SwitchListTile(
                   activeTrackColor: CatalogColor.primaryContainer,
                   title: Text("${l10n.switchButton} $_flag", style: labelStyle),
-                  secondary: SvgPicture.asset(
-                    Assets.moneyLine,
-                    colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
-                  ),
+                  secondary: const CatalogSvgIcon(Assets.moneyLine),
                   controlAffinity: ListTileControlAffinity.leading,
                   value: _flag,
                   onChanged: (value) {

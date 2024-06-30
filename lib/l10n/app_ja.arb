@@ -28,6 +28,12 @@
     "hintText": "Welcome, {name}!",
     "textField": "TextField",
     "textFormField": "TextFormField (Form)",
-    "formErrorText": "Please enter some text",
-    "form": "Form"
+    "formErrorText": "Please enter {name}",
+    "form": "Form",
+    "name": "Name",
+    "email": "Email",
+    "phoneNumber": "Phone Number",
+    "password": "Password",
+    "ok": "OK",
+    "done": "DONE"
 }

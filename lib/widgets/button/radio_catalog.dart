@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class RadioCatalog extends StatelessWidget {
   const RadioCatalog({super.key});
@@ -173,10 +174,7 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
               l10n.radioListTile,
               style: labelStyle.copyWith(fontSize: 14.0),
             ),
-            secondary: SvgPicture.asset(
-              Assets.lawsLine,
-              colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
-            ),
+            secondary: const CatalogSvgIcon(Assets.lawsLine),
             controlAffinity: ListTileControlAffinity.trailing,
             value: _BigTech.apple,
             groupValue: _company,
@@ -189,9 +187,7 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
         RadioListTile(
             title: Text(
               _BigTech.facebook.displayName,
-              style: labelStyle.copyWith(
-                color: CatalogColor.gray40,
-              ),
+              style: labelStyle.copyWith(color: CatalogColor.gray40),
             ),
             value: _BigTech.facebook,
             groupValue: _company,

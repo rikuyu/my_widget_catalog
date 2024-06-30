@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class TextButtonCatalog extends StatelessWidget {
   const TextButtonCatalog({super.key});
@@ -48,10 +49,7 @@ class TextButtonCatalog extends StatelessWidget {
               TextButton.icon(
                   onPressed: () {},
                   style: TextButton.styleFrom(foregroundColor: CatalogColor.primaryContainer),
-                  icon: SvgPicture.asset(
-                    Assets.downloadLine,
-                    colorFilter: const ColorFilter.mode(CatalogColor.primaryContainer, BlendMode.srcIn),
-                  ),
+                  icon: const CatalogSvgIcon(Assets.downloadLine),
                   label: Text(
                     l10n.labelEnable,
                     style: labelStyle,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class ElevatedButtonCatalog extends StatelessWidget {
   const ElevatedButtonCatalog({super.key});
@@ -80,10 +80,7 @@ class ElevatedButtonCatalog extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                Assets.bankAccountLine,
-                colorFilter: const ColorFilter.mode(CatalogColor.inversePrimary, BlendMode.srcIn),
-              ),
+              icon: const CatalogSvgIcon(Assets.bankAccountLine),
               label: Text(l10n.labelEnable, style: labelStyle),
               style: ElevatedButton.styleFrom(
                 backgroundColor: CatalogColor.primaryContainer,

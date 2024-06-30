@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
-import 'package:my_widget_catalog/widgets/common/svg_icon.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
 class TextFieldCatalog extends StatefulWidget {
@@ -46,7 +46,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                 decoration: InputDecoration(
                   labelText: l10n.textField,
                   labelStyle: style.copyWith(color: CatalogColor.primaryContainer, fontSize: 18.0),
-                  icon: const SvgIcon(Assets.authenticationLine),
+                  icon: const CatalogSvgIcon(Assets.authenticationLine),
                   iconColor: CatalogColor.primaryContainer,
                   hintText: l10n.hintText(l10n.textField),
                   hintStyle: style,
@@ -65,9 +65,9 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   hintStyle: style,
                   helperText: l10n.hintText(l10n.textField),
                   helperStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                  prefixIcon: const SvgIcon(Assets.childLine),
+                  prefixIcon: const CatalogSvgIcon(Assets.childLine),
                   prefixIconColor: CatalogColor.onPrimaryContainer,
-                  suffixIcon: const SvgIcon(Assets.fillableCardLine),
+                  suffixIcon: const CatalogSvgIcon(Assets.fillableCardLine),
                   suffixIconColor: CatalogColor.onPrimaryContainer,
                   suffixText: l10n.textField,
                   suffixStyle: style.copyWith(color: CatalogColor.onPrimaryContainer),
@@ -78,6 +78,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
               ),
               const SizedBox(height: 24.0),
               TextField(
+                obscureText: true,
                 controller: _controller,
                 maxLength: 15,
                 keyboardType: TextInputType.emailAddress,
@@ -97,15 +98,15 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   ),
                   hintText: l10n.hintText(l10n.textField),
                   hintStyle: style,
-                  prefixIcon: const SvgIcon(Assets.copyLine),
+                  prefixIcon: const CatalogSvgIcon(Assets.copyLine),
                   prefixText: l10n.textField,
                   prefixStyle: style.copyWith(color: CatalogColor.primaryContainer),
                   suffixIcon: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(onPressed: () {}, icon: const SvgIcon(Assets.familyLine)),
-                      IconButton(onPressed: () {}, icon: const SvgIcon(Assets.codeReaderLine)),
+                      IconButton(onPressed: () {}, icon: const CatalogSvgIcon(Assets.familyLine)),
+                      IconButton(onPressed: () {}, icon: const CatalogSvgIcon(Assets.codeReaderLine)),
                     ],
                   ),
                 ),
@@ -133,7 +134,6 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
               TextField(
                 maxLines: 4,
                 controller: _controller,
-                obscureText: true,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
@@ -147,7 +147,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   ),
                   hintText: l10n.labelEnable,
                   hintStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                  prefixIcon: const SvgIcon(Assets.documentsLine),
+                  prefixIcon: const CatalogSvgIcon(Assets.documentsLine),
                 ),
               )
             ])));
