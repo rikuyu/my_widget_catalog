@@ -9,6 +9,7 @@ import 'package:my_widget_catalog/widgets/button/radio_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/switch_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/text_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/toggle_buttons_catalog.dart';
+import 'package:my_widget_catalog/widgets/icons/icon_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/icons/icon_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
@@ -60,7 +61,7 @@ class MyWidgetCatalog extends StatelessWidget {
             // Icon
             CategoryTitle(l10n.iconTitle).build(context),
             WidgetItem(l10n.icon, const IconCatalog()).build(context),
-            WidgetItem("(TODO) ${l10n.iconButton}").build(context),
+            WidgetItem(l10n.iconButton, const IconButttonCatalog()).build(context),
             WidgetItem("(TODO) ${l10n.badge}").build(context),
 
             // その他
