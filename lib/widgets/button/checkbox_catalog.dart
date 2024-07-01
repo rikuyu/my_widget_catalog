@@ -29,6 +29,7 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
             child: ListView(
               children: [
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Checkbox(
                         activeColor: CatalogColor.primaryContainer,
