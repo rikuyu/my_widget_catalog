@@ -9,6 +9,7 @@ import 'package:my_widget_catalog/widgets/button/radio_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/switch_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/text_button_catalog.dart';
 import 'package:my_widget_catalog/widgets/button/toggle_buttons_catalog.dart';
+import 'package:my_widget_catalog/widgets/icons/icon_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
@@ -58,18 +59,18 @@ class MyWidgetCatalog extends StatelessWidget {
 
             // Icon
             CategoryTitle(l10n.iconTitle).build(context),
-            WidgetItem(l10n.icon).build(context),
-            WidgetItem(l10n.iconButton).build(context),
-            WidgetItem(l10n.badge).build(context),
+            WidgetItem(l10n.icon, const IconCatalog()).build(context),
+            WidgetItem("(TODO) ${l10n.iconButton}").build(context),
+            WidgetItem("(TODO) ${l10n.badge}").build(context),
 
             // その他
             CategoryTitle(l10n.otherTitle).build(context),
             WidgetItem(l10n.chip, const ChipCatalog()).build(context),
-            WidgetItem(l10n.card).build(context),
-            WidgetItem(l10n.slider).build(context),
-            WidgetItem(l10n.expanded).build(context),
-            WidgetItem(l10n.datePicker).build(context),
-            WidgetItem(l10n.timePicker).build(context),
+            WidgetItem("(TODO) ${l10n.card}").build(context),
+            WidgetItem("(TODO) ${l10n.slider}").build(context),
+            WidgetItem("(TODO) ${l10n.expanded}").build(context),
+            WidgetItem("(TODO) ${l10n.datePicker}").build(context),
+            WidgetItem("(TODO) ${l10n.timePicker}").build(context),
           ],
         ),
       ),

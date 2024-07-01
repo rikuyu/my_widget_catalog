@@ -32,10 +32,8 @@ class Assets {
   static const String bankAccountLine = 'assets/bank_account_line.svg';
   static const String certificationFill = 'assets/certification_fill.svg';
   static const String certificationLine = 'assets/certification_line.svg';
-  static const String certificationWithSealFill =
-      'assets/certification_with_seal_fill.svg';
-  static const String certificationWithSealLine =
-      'assets/certification_with_seal_line.svg';
+  static const String certificationWithSealFill = 'assets/certification_with_seal_fill.svg';
+  static const String certificationWithSealLine = 'assets/certification_with_seal_line.svg';
   static const String childFill = 'assets/child_fill.svg';
   static const String childLine = 'assets/child_line.svg';
   static const String codeReaderFill = 'assets/code_reader_fill.svg';
@@ -106,16 +104,12 @@ class Assets {
   static const String passwordLine = 'assets/password_line.svg';
   static const String pensionFill = 'assets/pension_fill.svg';
   static const String pensionLine = 'assets/pension_line.svg';
-  static const String personalComputerFill =
-      'assets/personal_computer_fill.svg';
-  static const String personalComputerLine =
-      'assets/personal_computer_line.svg';
+  static const String personalComputerFill = 'assets/personal_computer_fill.svg';
+  static const String personalComputerLine = 'assets/personal_computer_line.svg';
   static const String printerFill = 'assets/printer_fill.svg';
   static const String printerLine = 'assets/printer_line.svg';
-  static const String privacyProtectionFill =
-      'assets/privacy_protection_fill.svg';
-  static const String privacyProtectionLine =
-      'assets/privacy_protection_line.svg';
+  static const String privacyProtectionFill = 'assets/privacy_protection_fill.svg';
+  static const String privacyProtectionLine = 'assets/privacy_protection_line.svg';
   static const String publicOfferingFill = 'assets/public_offering_fill.svg';
   static const String publicOfferingLine = 'assets/public_offering_line.svg';
   static const String sealCertificateFill = 'assets/seal_certificate_fill.svg';
@@ -135,6 +129,7 @@ class Assets {
   static const String updateFill = 'assets/update_fill.svg';
   static const String updateLine = 'assets/update_line.svg';
   static const String workLine = 'assets/work_line.svg';
+  static const String workFill = 'assets/work_fill.svg';
 
   /// List of all assets
   static List<String> get values => [
@@ -256,6 +251,7 @@ class Assets {
         transactionsLine,
         updateFill,
         updateLine,
-        workLine
+        workLine,
+        workFill
       ];
 }
