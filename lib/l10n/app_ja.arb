@@ -35,6 +35,7 @@
     "filterChip": "FilterChip",
     "choiceChip": "ChoiceChip",
     "card": "Card",
+    "image": "Image",
     "slider": "Slider",
     "datePicker": "DatePicker",
     "timePicker": "TimePicker",
@@ -53,5 +54,6 @@
     "phoneNumber": "Phone Number",
     "password": "Password",
     "ok": "OK",
-    "done": "DONE"
+    "done": "DONE",
+    "description": "Hello, this is description. The weather in Tokyo today is sunny. The wind is a bit strong, but it’s a comfortable day."
 }

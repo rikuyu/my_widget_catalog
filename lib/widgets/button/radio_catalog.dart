@@ -111,7 +111,7 @@ class _SimpleRadioCatalogState extends State<_SimpleRadioCatalog> {
                 }),
             const SizedBox(width: 8.0),
             Text(
-              _Animal.mouse.name,
+              _Animal.bird.name,
               style: labelStyle,
             )
           ],
@@ -197,9 +197,9 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
             tileColor: CatalogColor.primaryContainer,
             title: Text(
               _BigTech.amazon.displayName,
-              style: labelStyle.copyWith(color: CatalogColor.onPrimaryContainer),
+              style: labelStyle.copyWith(color: CatalogColor.primaryContainer),
             ),
-            fillColor: MaterialStateProperty.all(CatalogColor.onPrimaryContainer),
+            fillColor: MaterialStateProperty.all(CatalogColor.primaryContainer),
             value: _BigTech.amazon,
             groupValue: _company,
             onChanged: (val) {

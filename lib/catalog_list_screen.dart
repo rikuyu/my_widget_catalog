@@ -15,7 +15,9 @@ import 'package:my_widget_catalog/widgets/icons/icon_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/grid_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.dart';
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
+import 'package:my_widget_catalog/widgets/others/card_catalog.dart';
 import 'package:my_widget_catalog/widgets/others/chip_catalog.dart';
+import 'package:my_widget_catalog/widgets/others/image_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_field_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_form_field_catalog.dart';
 
@@ -68,7 +70,8 @@ class MyWidgetCatalog extends StatelessWidget {
             // その他
             CategoryTitle(l10n.otherTitle).build(context),
             WidgetItem(l10n.chip, const ChipCatalog()).build(context),
-            WidgetItem("(TODO) ${l10n.card}").build(context),
+            WidgetItem(l10n.card, const CardCatalog()).build(context),
+            WidgetItem(l10n.image, const ImageCatalog()).build(context),
             WidgetItem("(TODO) ${l10n.slider}").build(context),
             WidgetItem("(TODO) ${l10n.expanded}").build(context),
             WidgetItem("(TODO) ${l10n.datePicker}").build(context),

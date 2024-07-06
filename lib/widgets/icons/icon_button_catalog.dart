@@ -3,7 +3,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
-import 'package:my_widget_catalog/widgets/others/all_icon.dart';
+import 'package:my_widget_catalog/widgets/common/all_icon.dart';
 
 class IconButttonCatalog extends StatelessWidget {
   const IconButttonCatalog({super.key});

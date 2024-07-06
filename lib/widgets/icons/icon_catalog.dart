@@ -4,7 +4,7 @@ import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
-import 'package:my_widget_catalog/widgets/others/all_icon.dart';
+import 'package:my_widget_catalog/widgets/common/all_icon.dart';
 
 class IconCatalog extends StatelessWidget {
   const IconCatalog({super.key});
