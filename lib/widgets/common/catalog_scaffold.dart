@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class CatalogScaffold extends StatelessWidget {
   const CatalogScaffold({required this.title, required this.body, super.key});
@@ -19,10 +19,7 @@ class CatalogScaffold extends StatelessWidget {
         ),
         backgroundColor: CatalogColor.primaryContainer,
         leading: IconButton(
-          icon: SvgPicture.asset(
-            Assets.arrowLeftLine,
-            colorFilter: const ColorFilter.mode(CatalogColor.inversePrimary, BlendMode.srcIn),
-          ),
+          icon: Assets.arrowLeftLine.catalogIcon(color: CatalogColor.inversePrimary),
           onPressed: () {
             Navigator.of(context).pop();
           },

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -174,7 +173,7 @@ class _RadioListTileCatalogState extends State<_RadioListTileCatalog> {
               l10n.radioListTile,
               style: labelStyle.copyWith(fontSize: 14.0),
             ),
-            secondary: const CatalogSvgIcon(Assets.lawsLine),
+            secondary: Assets.lawsLine.catalogIcon(),
             controlAffinity: ListTileControlAffinity.trailing,
             value: _BigTech.apple,
             groupValue: _company,

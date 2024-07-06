@@ -26,36 +26,36 @@ class BadgeCatalog extends StatelessWidget {
             child: ListView(
               children: [
                 const SizedBox(height: 20.0),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Badge(
-                      label: Text("1"),
+                      label: const Text("1"),
                       backgroundColor: CatalogColor.primaryContainer,
                       textColor: CatalogColor.onPrimaryContainer,
-                      child: CatalogSvgIcon(Assets.childLine),
+                      child: Assets.childLine.catalogIcon(),
                     ),
-                    SizedBox(width: 30.0),
+                    const SizedBox(width: 30.0),
                     Badge(
-                      label: Text("99+"),
+                      label: const Text("99+"),
                       backgroundColor: CatalogColor.primaryContainer,
                       textColor: CatalogColor.onPrimaryContainer,
-                      child: CatalogSvgIcon(Assets.moneyLine),
+                      child: Assets.moneyLine.catalogIcon(),
                     ),
-                    SizedBox(width: 30.0),
+                    const SizedBox(width: 30.0),
                     Badge(
-                      label: Text("bank"),
+                      label: const Text("bank"),
                       backgroundColor: CatalogColor.primaryContainer,
                       textColor: CatalogColor.onPrimaryContainer,
-                      child: CatalogSvgIcon(Assets.bankAccountLine),
+                      child: Assets.bankAccountLine.catalogIcon(),
                     ),
-                    SizedBox(width: 30.0),
+                    const SizedBox(width: 30.0),
                     Badge(
-                      label: Text("3"),
+                      label: const Text("3"),
                       backgroundColor: CatalogColor.primaryContainer,
                       textColor: CatalogColor.onPrimaryContainer,
                       alignment: Alignment.bottomRight,
-                      child: CatalogSvgIcon(Assets.notificationLine),
+                      child: Assets.notificationLine.catalogIcon(),
                     ),
                   ],
                 ),
@@ -67,12 +67,12 @@ class BadgeCatalog extends StatelessWidget {
                   children: [
                     Badge.count(
                       count: 2,
-                      child: const CatalogSvgIcon(Assets.notificationLine),
+                      child: Assets.notificationLine.catalogIcon(),
                     ),
                     const SizedBox(width: 30.0),
                     Badge.count(
                       count: 99,
-                      child: const CatalogSvgIcon(Assets.documentsLine),
+                      child: Assets.documentsLine.catalogIcon(),
                     ),
                   ],
                 ),

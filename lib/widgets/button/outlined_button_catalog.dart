@@ -59,7 +59,7 @@ class OutlinedButtonCatalog extends StatelessWidget {
                       color: CatalogColor.primaryContainer,
                     ),
                   ),
-                  icon: const CatalogSvgIcon(Assets.certificationWithSealLine),
+                  icon: Assets.certificationWithSealLine.catalogIcon(),
                   label: Text(l10n.labelEnable, style: labelStyle)),
               const SizedBox(height: 20.0),
               OutlinedButton(

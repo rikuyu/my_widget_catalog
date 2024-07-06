@@ -48,7 +48,7 @@ class TextButtonCatalog extends StatelessWidget {
               TextButton.icon(
                   onPressed: () {},
                   style: TextButton.styleFrom(foregroundColor: CatalogColor.primaryContainer),
-                  icon: const CatalogSvgIcon(Assets.downloadLine),
+                  icon: Assets.downloadLine.catalogIcon(),
                   label: Text(
                     l10n.labelEnable,
                     style: labelStyle,

@@ -30,10 +30,7 @@ class IconCatalog extends StatelessWidget {
                           decoration: TextDecoration.none,
                         ),
                       ),
-                      trailing: CatalogSvgIcon(
-                        e.value,
-                        color: CatalogColor.primary,
-                      ),
+                      trailing: e.value.catalogIcon(color: CatalogColor.primary),
                     ),
                     const CatalogDivider()
                   ],

@@ -80,7 +80,7 @@ class ElevatedButtonCatalog extends StatelessWidget {
             const SizedBox(height: 20.0),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: const CatalogSvgIcon(Assets.bankAccountLine),
+              icon: Assets.bankAccountLine.catalogIcon(color: CatalogColor.inversePrimary),
               label: Text(l10n.labelEnable, style: labelStyle),
               style: ElevatedButton.styleFrom(
                 backgroundColor: CatalogColor.primaryContainer,

@@ -90,19 +90,15 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
                       children: [
                         const Spacer(),
                         ElevatedButton.icon(
-                          style: ElevatedButton.styleFrom(backgroundColor: CatalogColor.primaryContainer),
-                          onPressed: () {
-                            _formKey.currentState?.validate();
-                          },
-                          label: Text(
-                            l10n.ok,
-                            style: style.copyWith(color: CatalogColor.onPrimaryContainer),
-                          ),
-                          icon: const CatalogSvgIcon(
-                            Assets.arrowRightLine,
-                            color: CatalogColor.onPrimaryContainer,
-                          ),
-                        )
+                            style: ElevatedButton.styleFrom(backgroundColor: CatalogColor.primaryContainer),
+                            onPressed: () {
+                              _formKey.currentState?.validate();
+                            },
+                            label: Text(
+                              l10n.ok,
+                              style: style.copyWith(color: CatalogColor.onPrimaryContainer),
+                            ),
+                            icon: Assets.arrowLeftLine.catalogIcon(color: CatalogColor.inversePrimary)),
                       ],
                     )
                   ],
@@ -112,15 +108,11 @@ class _TextFormFieldCatalogState extends State<TextFormFieldCatalog> {
 
 class CatalogForm extends StatelessWidget {
   const CatalogForm(this.type,
-      {this.label = "",
-      this.prefixIconAsset = "",
-      this.validator = _defaultValidator,
-      this.obscure = false,
-      super.key});
+      {this.label = "", this.prefixIconAsset, this.validator = _defaultValidator, this.obscure = false, super.key});
 
   final FormType type;
   final String label;
-  final String prefixIconAsset;
+  final SvgGenImage? prefixIconAsset;
   final String? Function(String?)? validator;
   final bool obscure;
 
@@ -159,7 +151,7 @@ class CatalogForm extends StatelessWidget {
         labelText: label,
         labelStyle: style.copyWith(color: CatalogColor.primary),
         floatingLabelStyle: style,
-        prefixIcon: prefixIconAsset.isNotEmpty ? CatalogSvgIcon(prefixIconAsset) : null,
+        prefixIcon: prefixIconAsset?.catalogIcon(),
       ),
       obscureText: obscure,
     );

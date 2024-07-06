@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
@@ -46,7 +45,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                 decoration: InputDecoration(
                   labelText: l10n.textField,
                   labelStyle: style.copyWith(color: CatalogColor.primaryContainer, fontSize: 18.0),
-                  icon: const CatalogSvgIcon(Assets.authenticationLine),
+                  icon: Assets.authenticationLine.catalogIcon(),
                   iconColor: CatalogColor.primaryContainer,
                   hintText: l10n.hintText(l10n.textField),
                   hintStyle: style,
@@ -65,9 +64,9 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   hintStyle: style,
                   helperText: l10n.hintText(l10n.textField),
                   helperStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                  prefixIcon: const CatalogSvgIcon(Assets.childLine),
+                  prefixIcon: Assets.childLine.catalogIcon(),
                   prefixIconColor: CatalogColor.onPrimaryContainer,
-                  suffixIcon: const CatalogSvgIcon(Assets.fillableCardLine),
+                  suffixIcon: Assets.fillableCardLine.catalogIcon(),
                   suffixIconColor: CatalogColor.onPrimaryContainer,
                   suffixText: l10n.textField,
                   suffixStyle: style.copyWith(color: CatalogColor.onPrimaryContainer),
@@ -98,15 +97,15 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   ),
                   hintText: l10n.hintText(l10n.textField),
                   hintStyle: style,
-                  prefixIcon: const CatalogSvgIcon(Assets.copyLine),
+                  prefixIcon: Assets.copyLine.catalogIcon(),
                   prefixText: l10n.textField,
                   prefixStyle: style.copyWith(color: CatalogColor.primaryContainer),
                   suffixIcon: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(onPressed: () {}, icon: const CatalogSvgIcon(Assets.familyLine)),
-                      IconButton(onPressed: () {}, icon: const CatalogSvgIcon(Assets.codeReaderLine)),
+                      IconButton(onPressed: () {}, icon: Assets.familyLine.catalogIcon()),
+                      IconButton(onPressed: () {}, icon: Assets.codeReaderLine.catalogIcon()),
                     ],
                   ),
                 ),
@@ -122,11 +121,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   ),
                   hintText: l10n.labelDisable,
                   hintStyle: style.copyWith(color: CatalogColor.disable),
-                  prefixIcon: SvgPicture.asset(
-                    Assets.arrowRightLine,
-                    fit: BoxFit.scaleDown,
-                    colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                  ),
+                  prefixIcon: Assets.arrowRightLine.catalogIcon(),
                   prefixIconColor: CatalogColor.disable,
                 ),
               ),
@@ -147,7 +142,7 @@ class _TextFieldCatalogState extends State<TextFieldCatalog> {
                   ),
                   hintText: l10n.labelEnable,
                   hintStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                  prefixIcon: const CatalogSvgIcon(Assets.documentsLine),
+                  prefixIcon: Assets.documentsLine.catalogIcon(),
                 ),
               )
             ])));

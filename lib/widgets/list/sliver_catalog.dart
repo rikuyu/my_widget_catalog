@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class SliverCatalog extends StatelessWidget {
   const SliverCatalog({super.key});
@@ -22,10 +22,7 @@ class SliverCatalog extends StatelessWidget {
             ),
             expandedHeight: 200,
             leading: IconButton(
-              icon: SvgPicture.asset(
-                Assets.arrowLeftLine,
-                colorFilter: const ColorFilter.mode(CatalogColor.inversePrimary, BlendMode.srcIn),
-              ),
+              icon: Assets.arrowLeftLine.catalogIcon(color: CatalogColor.inversePrimary),
               onPressed: () {
                 Navigator.of(context).pop();
               },

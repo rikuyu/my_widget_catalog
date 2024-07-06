@@ -49,7 +49,7 @@ class ImageCatalog extends StatelessWidget {
                   return Center(
                     child: Column(
                       children: [
-                        const CatalogSvgIcon(Assets.informationLine, color: CatalogColor.error),
+                        Assets.informationLine.catalogIcon(color: CatalogColor.error),
                         const SizedBox(height: 6.0),
                         Text(error.toString(), style: style),
                       ],

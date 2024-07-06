@@ -93,7 +93,7 @@ class _CheckBoxCatalogState extends State<CheckBoxCatalog> {
                 const CatalogDivider(),
                 CheckboxListTile(
                   activeColor: CatalogColor.primaryContainer,
-                  secondary: const CatalogSvgIcon(Assets.stampLine),
+                  secondary: Assets.stampLine.catalogIcon(),
                   title: Text(
                     "${l10n.checkbox} $_flag",
                     style: labelStyle,

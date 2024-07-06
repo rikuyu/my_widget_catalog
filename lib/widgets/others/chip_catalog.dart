@@ -44,15 +44,15 @@ class _ChipCatalogState extends State<ChipCatalog> {
                   Chip(
                       label: Text(l10n.chip, style: style),
                       labelStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                      deleteIcon: const CatalogSvgIcon(Assets.moneyLine),
+                      deleteIcon: Assets.moneyLine.catalogIcon(),
                       backgroundColor: CatalogColor.onPrimaryContainer,
                       shape: const StadiumBorder(side: BorderSide(color: CatalogColor.primaryContainer))),
                   const SizedBox(width: 12.0),
                   Chip(
-                      avatar: const CatalogSvgIcon(Assets.itineraryLine),
+                      avatar: Assets.itineraryLine.catalogIcon(),
                       label: Text(l10n.chip, style: style),
                       labelStyle: style.copyWith(color: CatalogColor.primaryContainer),
-                      deleteIcon: const CatalogSvgIcon(Assets.moneyLine),
+                      deleteIcon: Assets.moneyLine.catalogIcon(),
                       backgroundColor: CatalogColor.onPrimaryContainer,
                       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0)),
                 ],
@@ -63,7 +63,7 @@ class _ChipCatalogState extends State<ChipCatalog> {
               Row(
                 children: [
                   ActionChip(
-                      avatar: const CatalogSvgIcon(Assets.medicineLine),
+                      avatar: Assets.medicineLine.catalogIcon(),
                       label: Text(l10n.actionChip),
                       labelStyle: style,
                       backgroundColor: CatalogColor.onPrimaryContainer,
@@ -72,7 +72,7 @@ class _ChipCatalogState extends State<ChipCatalog> {
                       onPressed: () {}),
                   const SizedBox(width: 12.0),
                   ActionChip(
-                      avatar: const CatalogSvgIcon(Assets.arrivalLine, color: CatalogColor.disable),
+                      avatar: Assets.arrivalLine.catalogIcon(color: CatalogColor.disable),
                       label: Text(l10n.actionChip),
                       labelStyle: style.copyWith(color: CatalogColor.disable),
                       shape: const StadiumBorder(),

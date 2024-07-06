@@ -40,7 +40,7 @@ class CardCatalog extends StatelessWidget {
                   child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                     Row(
                       children: [
-                        const CatalogSvgIcon(Assets.moneyLine),
+                        Assets.moneyLine.catalogIcon(),
                         const SizedBox(width: 8.0),
                         Text(l10n.card, style: style.copyWith(fontSize: 24.0)),
                       ],

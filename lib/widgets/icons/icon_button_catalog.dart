@@ -30,12 +30,7 @@ class IconButttonCatalog extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: CatalogSvgIcon(
-                          e.value,
-                          color: CatalogColor.primary,
-                        )),
+                    IconButton(onPressed: () {}, icon: e.value.catalogIcon(color: CatalogColor.primary)),
                     const SizedBox(height: 8.0),
                     Text(e.key)
                   ],

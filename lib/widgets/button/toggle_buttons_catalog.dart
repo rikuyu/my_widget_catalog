@@ -3,8 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:my_widget_catalog/gen/assets.gen.dart';
+import 'package:my_widget_catalog/widgets/common/catalog_svg_icon.dart';
 
 class ToggleButtonsCatalog extends StatefulWidget {
   const ToggleButtonsCatalog({super.key});
@@ -40,11 +40,11 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
               color: CatalogColor.primaryContainer,
               selectedColor: CatalogColor.green70,
               children: [
-                SvgPicture.asset(Assets.historyLine),
-                SvgPicture.asset(Assets.expenditureLine),
-                SvgPicture.asset(Assets.codeReaderLine),
-                SvgPicture.asset(Assets.invoiceLine),
-                SvgPicture.asset(Assets.arrivalLine),
+                Assets.historyLine.catalogIcon(),
+                Assets.expenditureLine.catalogIcon(),
+                Assets.codeReaderLine.catalogIcon(),
+                Assets.invoiceLine.catalogIcon(),
+                Assets.arrivalLine.catalogIcon(),
               ],
             ),
             const SizedBox(height: 20.0),
@@ -70,11 +70,11 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
               splashColor: CatalogColor.blue30,
               highlightColor: CatalogColor.purple30,
               children: [
-                SvgPicture.asset(Assets.fastTrackLine),
-                SvgPicture.asset(Assets.incomeLine),
-                SvgPicture.asset(Assets.luggageLine),
-                SvgPicture.asset(Assets.municipalityLine),
-                SvgPicture.asset(Assets.pensionLine),
+                Assets.fastTrackLine.catalogIcon(),
+                Assets.incomeLine.catalogIcon(),
+                Assets.luggageLine.catalogIcon(),
+                Assets.municipalityLine.catalogIcon(),
+                Assets.pensionLine.catalogIcon(),
               ],
             ),
             const SizedBox(height: 20.0),
@@ -100,11 +100,11 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
               selectedBorderColor: CatalogColor.green70,
               splashColor: CatalogColor.primaryContainer,
               children: [
-                SvgPicture.asset(Assets.attentionLine),
-                SvgPicture.asset(Assets.childLine),
-                SvgPicture.asset(Assets.familyLine),
-                SvgPicture.asset(Assets.medicineLine),
-                SvgPicture.asset(Assets.immunizationLine),
+                Assets.attentionLine.catalogIcon(),
+                Assets.childLine.catalogIcon(),
+                Assets.familyLine.catalogIcon(),
+                Assets.medicineLine.catalogIcon(),
+                Assets.immunizationLine.catalogIcon(),
               ],
             ),
             const SizedBox(height: 20.0),
@@ -116,26 +116,11 @@ class _ToggleButtonsCatalogState extends State<ToggleButtonsCatalog> {
               disabledColor: CatalogColor.disable,
               disabledBorderColor: CatalogColor.disable,
               children: [
-                SvgPicture.asset(
-                  Assets.healthLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                ),
-                SvgPicture.asset(
-                  Assets.publicOfferingLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                ),
-                SvgPicture.asset(
-                  Assets.eApplicationLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                ),
-                SvgPicture.asset(
-                  Assets.notificationLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                ),
-                SvgPicture.asset(
-                  Assets.fastTrackLine,
-                  colorFilter: const ColorFilter.mode(CatalogColor.disable, BlendMode.srcIn),
-                ),
+                Assets.healthLine.catalogIcon(color: CatalogColor.disable),
+                Assets.publicOfferingLine.catalogIcon(color: CatalogColor.disable),
+                Assets.eApplicationLine.catalogIcon(color: CatalogColor.disable),
+                Assets.notificationLine.catalogIcon(color: CatalogColor.disable),
+                Assets.fastTrackLine.catalogIcon(color: CatalogColor.disable),
               ],
             ),
           ]),

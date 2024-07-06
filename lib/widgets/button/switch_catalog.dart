@@ -91,7 +91,7 @@ class _SwitchCatalogState extends State<SwitchCatalog> {
               const CatalogDivider(),
               SwitchListTile(
                   title: Text(l10n.labelDisable, style: labelStyle.copyWith(color: CatalogColor.disable)),
-                  secondary: const CatalogSvgIcon(Assets.invoiceLine),
+                  secondary: Assets.invoiceLine.catalogIcon(),
                   controlAffinity: ListTileControlAffinity.trailing,
                   value: false,
                   onChanged: null),
@@ -99,7 +99,7 @@ class _SwitchCatalogState extends State<SwitchCatalog> {
               SwitchListTile(
                   activeTrackColor: CatalogColor.primaryContainer,
                   title: Text("${l10n.switchButton} $_flag", style: labelStyle),
-                  secondary: const CatalogSvgIcon(Assets.moneyLine),
+                  secondary: Assets.moneyLine.catalogIcon(),
                   controlAffinity: ListTileControlAffinity.leading,
                   value: _flag,
                   onChanged: (value) {
