@@ -17,6 +17,7 @@ import 'package:my_widget_catalog/widgets/list/list_wheel_scroll_view_catalog.da
 import 'package:my_widget_catalog/widgets/list/sliver_catalog.dart';
 import 'package:my_widget_catalog/widgets/others/card_catalog.dart';
 import 'package:my_widget_catalog/widgets/others/chip_catalog.dart';
+import 'package:my_widget_catalog/widgets/others/expanded_catalog.dart';
 import 'package:my_widget_catalog/widgets/others/image_catalog.dart';
 import 'package:my_widget_catalog/widgets/others/slider_catalog.dart';
 import 'package:my_widget_catalog/widgets/textfield/text_field_catalog.dart';
@@ -74,7 +75,7 @@ class MyWidgetCatalog extends StatelessWidget {
             WidgetItem(l10n.card, const CardCatalog()).build(context),
             WidgetItem(l10n.image, const ImageCatalog()).build(context),
             WidgetItem(l10n.slider, const SliderCatalog()).build(context),
-            WidgetItem("(TODO) ${l10n.expanded}").build(context),
+            WidgetItem(l10n.expanded, const ExpandedCatalog()).build(context),
             WidgetItem("(TODO) ${l10n.datePicker}").build(context),
             WidgetItem("(TODO) ${l10n.timePicker}").build(context),
           ],

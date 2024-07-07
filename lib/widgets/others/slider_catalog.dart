@@ -65,7 +65,7 @@ class _SliderCatalogState extends State<SliderCatalog> {
               const Slider(
                 max: 5,
                 min: 0,
-                value: 2,
+                value: 1,
                 onChanged: null,
               ),
               const SizedBox(height: 24.0),
