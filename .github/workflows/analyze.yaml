@@ -2,7 +2,7 @@ name: flutter lint
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
   push:
     branches:
       - main
@@ -31,13 +31,14 @@ jobs:
         run: flutter pub get
       
       - name: flutter analyze
-        run: flutter analyze
+        run: flutter analyze > flutter_analyze_report.txt
       
       - name: setup ruby
         if: ${{ failure() }}
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.3'
+          ruby-version: '3.0'
+          bundler-cache: true
       
       - name: setup danger
         if: ${{ failure() }}
