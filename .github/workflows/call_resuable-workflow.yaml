@@ -1,5 +1,11 @@
 name: Call Reusable Workflows
-on: pull_request
+on: 
+  pull_request:
+    types: [opened]
+  push:
+    branches:
+      - main
+
 jobs:
   call:
     uses: ./.github/workflows/reusable-workflow.yaml
