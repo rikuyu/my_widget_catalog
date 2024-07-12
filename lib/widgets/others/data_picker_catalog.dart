@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:my_widget_catalog/widgets/common/catalog_divider.dart';
 import 'package:my_widget_catalog/widgets/common/catalog_scaffold.dart';
 import 'package:my_widget_catalog/theme/catalog_color.dart';
 
@@ -26,7 +25,8 @@ class _DatePickerCatalogState extends State<DatePickerCatalog> {
     return CatalogScaffold(
         title: l10n.expanded,
         body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0), child: ListView(children: [])));
+            padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 24.0),
+            child: ListView(children: const [])));
   }
 }
 
